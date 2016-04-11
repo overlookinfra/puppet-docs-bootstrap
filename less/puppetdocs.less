@@ -1,4 +1,13 @@
-// Don't do that table.table thing, man (NF)
+// Set body text font-weight (Bootstrap has no preference, so the browser defaults it to 400.)
+
+@font-weight-base: 300; /* Calibre Web Light */
+@font-weight-bullets: @font-weight-base;
+
+body {
+  font-weight: @font-weight-base;
+}
+
+// Skip that table.table thing, man
 // --------------------------------
 
 table {
@@ -28,7 +37,7 @@ ol.toc {
 }
 
 ol.toc a {
-  font-weight: normal;
+  font-weight: @font-weight-base;
 }
 
 /* Second-level TOCs should have lighter text and be smaller */
@@ -75,7 +84,7 @@ nav.main > ul {
 
 nav.main ul > li::before {
   content: "»";
-  font-weight: bold;
+  font-weight: @font-weight-bullets;
   color: @link-color;
   position: relative;
   left: -0.75em;
@@ -85,13 +94,13 @@ nav.main ul > li::before {
 
 nav.main ul > li.hidden-nav::before {
   content: "+";
-  font-weight: bold;
+  font-weight: @font-weight-bullets;
   color: @gray-light;
 }
 
 nav.main ul > li.expanded-nav::before {
   content: "–";
-  font-weight: bold;
+  font-weight: @font-weight-bullets;
   color: @gray-light;
 }
 
