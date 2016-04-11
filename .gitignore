@@ -39,3 +39,8 @@ docs/.jekyll-metadata
 # Folders to ignore
 bower_components
 node_modules
+
+# Why is this checked into version control :c
+dist/css
+dist/js/bootstrap.js
+dist/js/bootstrap.min.js
