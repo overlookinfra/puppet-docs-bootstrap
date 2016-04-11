@@ -76,7 +76,7 @@ nav.main > ul {
 nav.main ul > li::before {
   content: "»";
   font-weight: bold;
-  color: #159680;
+  color: @link-color;
   position: relative;
   left: -0.75em;
   display: inline-block;
@@ -86,13 +86,13 @@ nav.main ul > li::before {
 nav.main ul > li.hidden-nav::before {
   content: "+";
   font-weight: bold;
-  color: #888;
+  color: @gray-light;
 }
 
 nav.main ul > li.expanded-nav::before {
   content: "–";
   font-weight: bold;
-  color: #888;
+  color: @gray-light;
 }
 
 a.disabled-nav-link {
@@ -110,13 +110,13 @@ nav.main ul > li strong {
 }
 
 nav.main ul > li strong:hover {
-  color: #999;
+  color: @gray-light;
   text-decoration: underline;
 }
 
 /* The per-document version note div */
 div#version-note {
-  color: #d20;
+  color: @brand-danger;
   margin-top: 0.5em;
 }
 div#version-note > .noisy {
