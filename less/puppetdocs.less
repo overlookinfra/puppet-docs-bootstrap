@@ -1,10 +1,15 @@
 // Set body text font-weight (Bootstrap has no preference, so the browser defaults it to 400.)
 
 @font-weight-base: 300; /* Calibre Web Light */
+@font-weight-bold: 500; /* Calibre Web Medium */
 @font-weight-bullets: @font-weight-base;
 
 body {
   font-weight: @font-weight-base;
+}
+
+b, strong {
+  font-weight: @font-weight-bold;
 }
 
 // Skip that table.table thing, man
