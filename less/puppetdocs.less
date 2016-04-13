@@ -1,11 +1,12 @@
-// Set the base font-size to match *.puppet.com, so we can also reuse its rem sizes.
+/* Typography */
+/* ---------- */
 
+// Set the base font-size to match *.puppet.com, so we can also reuse its rem sizes.
 html {
   font-size: 16px;
 }
 
-// Set body text font-weight (Bootstrap has no preference, so the browser defaults it to 400.)
-
+/* Set body text font-weight (Bootstrap has no preference, so the browser defaults it to 400.) */
 @font-weight-base: 300; /* Calibre Web Light */
 @font-weight-bold: 500; /* Calibre Web Medium */
 @font-weight-bullets: @font-weight-base;
@@ -26,8 +27,8 @@ input#search-container.form-control {
   color: #fff;
 }
 
-// Skip that table.table thing, man
-// --------------------------------
+/* Skip that table.table thing, man */
+/* -------------------------------- */
 
 table {
   .table;
@@ -37,8 +38,8 @@ table {
 }
 
 
-// In-page TOC styling
-// -------------------
+/* In-page TOC styling */
+/* ------------------- */
 
 nav.in-page {
   padding-top: 1em;
@@ -92,6 +93,8 @@ ol.toc > li > ol.toc > li {
 }
 
 /* Sidebar navigation styling */
+/* -------------------------- */
+
 nav.main ul {
   list-style-type: none;
   margin-left: -1.5em;
@@ -143,6 +146,8 @@ nav.main ul > li strong:hover {
 }
 
 /* The per-document version note div */
+/* --------------------------------- */
+
 div#version-note {
   color: @brand-danger;
   margin-top: 0.5em;
