@@ -1,3 +1,9 @@
+// Set the base font-size to match *.puppet.com, so we can also reuse its rem sizes.
+
+html {
+  font-size: 16px;
+}
+
 // Set body text font-weight (Bootstrap has no preference, so the browser defaults it to 400.)
 
 @font-weight-base: 300; /* Calibre Web Light */
@@ -10,6 +16,14 @@ body {
 
 b, strong {
   font-weight: @font-weight-bold;
+}
+
+// Style navbar search box
+input#search-container.form-control {
+  border-radius: 0;
+  background: #222;
+  border: 1px solid #555;
+  color: #fff;
 }
 
 // Skip that table.table thing, man
@@ -140,3 +154,10 @@ div#version-note > .noisy {
   padding: 0.5em;
 }
 
+/* Blockquote notes */
+blockquote {
+  margin-top: 1rem;
+  border-left: 5px solid @brand-amber;
+  border-bottom: 1px solid #ccc;
+  background-color: #fafafa;
+}

@@ -176,7 +176,7 @@
     display: block;
   }
 
-  @media (min-width: @grid-float-breakpoint) {
+  @media (max-width: @grid-float-breakpoint) {
     .navbar > .container &,
     .navbar > .container-fluid & {
       margin-left: -@navbar-padding-horizontal;
@@ -193,13 +193,10 @@
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: @navbar-padding-horizontal;
-  padding: 9px 10px;
-  .navbar-vertical-align(34px);
   background-color: transparent;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
-  border-radius: @border-radius-base;
+  border: 0;
+  top: 1.75rem;
 
   // We remove the `outline` here, but later compensate by attaching `:hover`
   // styles to `:focus`.
@@ -210,12 +207,12 @@
   // Bars
   .icon-bar {
     display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 1px;
+    width: 2.5rem;
+    height: 0.375rem;
+    border-radius: 0;
   }
   .icon-bar + .icon-bar {
-    margin-top: 4px;
+    margin-top: 0.375rem;
   }
 
   @media (min-width: @grid-float-breakpoint) {
@@ -270,8 +267,9 @@
     > li {
       float: left;
       > a {
-        padding-top:    @navbar-padding-vertical;
-        padding-bottom: @navbar-padding-vertical;
+        padding-top:    (@navbar-padding-vertical / 2);
+        padding-bottom: (@navbar-padding-vertical / 2);
+        font-size:      @font-size-small;
       }
     }
   }
@@ -317,6 +315,7 @@
     padding-top: 0;
     padding-bottom: 0;
     .box-shadow(none);
+    margin-top: 2rem;
   }
 }
 
@@ -557,7 +556,7 @@
       &,
       &:hover,
       &:focus {
-        color: @navbar-inverse-link-active-color;
+        color: @brand-amber;
         background-color: @navbar-inverse-link-active-bg;
       }
     }
