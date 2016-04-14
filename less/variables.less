@@ -19,7 +19,7 @@
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
-
+@brand-amber:           #ffae1a;
 
 //== Scaffolding
 //
@@ -50,10 +50,10 @@
 
 @font-size-base:          1.1rem; // 17.6px
 @font-size-large:         (@font-size-base * 1.25);  // ~22px
-@font-size-small:         (@font-size-base * 0.85);  // ~15px
+@font-size-small:         (@font-size-base * 0.836364);  // ~14.72px
 
-@font-size-h1:            (@font-size-base * 2.6);  // ~46px
-@font-size-h2:            (@font-size-base * 2.15); // ~38px
+@font-size-h1:            (@font-size-base * 2.6);   // ~46px
+@font-size-h2:            (@font-size-base * 2.15);  // ~38px
 @font-size-h3:            (@font-size-base * 1.7);   // ~30px
 @font-size-h4:            (@font-size-base * 1.25);  // ~22px
 @font-size-h5:            @font-size-base;
@@ -360,8 +360,8 @@
 @navbar-height:                    50px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             @border-radius-base;
-@navbar-padding-horizontal:        floor((@grid-gutter-width / 2));
-@navbar-padding-vertical:          1.275rem;
+@navbar-padding-horizontal:        0.75rem; // to match other sites
+@navbar-padding-vertical:          1.275rem;  // to match other sites
 @navbar-collapse-max-height:       340px;
 
 @navbar-default-color:             #777;
@@ -399,7 +399,7 @@
 @navbar-inverse-link-hover-color:           #fff;
 @navbar-inverse-link-hover-bg:              transparent;
 @navbar-inverse-link-active-color:          @navbar-inverse-link-hover-color;
-@navbar-inverse-link-active-bg:             darken(@navbar-inverse-bg, 10%);
+@navbar-inverse-link-active-bg:             @navbar-inverse-bg; // darken(@navbar-inverse-bg, 10%);
 @navbar-inverse-link-disabled-color:        #444;
 @navbar-inverse-link-disabled-bg:           transparent;
 
