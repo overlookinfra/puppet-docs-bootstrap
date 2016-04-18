@@ -22,3 +22,16 @@ So if you make Bootstrap changes, you'll need to manually check the results into
 6. Build one last time, copy the results into puppet-docs, and commit there. **Make sure you reference the Bootstrap commit SHA in your puppet-docs commit message!** Since everything's minified, it's the only easy way of tracking what's in the site.
 7. Get your puppet-docs commit merged into master. If necessary, merge master into the pe-preview branch.
 
+## Editing the Less code
+
+TBH, learning how the Less stuff is laid out for the first time is kind of the one hard part about using Bootstrap. It goes a little like this:
+
+* "Less" is a CSS preprocessor that allows things like variables and mixins. The syntax is [documented here.](http://lesscss.org/features/)
+* The Less code is in the `less` folder, and it's split up into a freaking bazillion little files, which is the initially confusing part.
+* But there's only one "real" file: `bootstrap.less`. It's a pile of `@import` statements that brings in the other files in order.
+    * Basically, it creates `dist/bootstrap.min.css` by making one big file out of all those files and then compiling out all the verbosity-reducing syntax. Later files can reference mixins and variables from the earlier files, but not vice versa.
+* There are also two other "special" files:
+    * `variables.less` sets a bunch of values that get used by all the other files. Stuff like link color, fonts, etc.
+    * `puppetdocs.less` has a bunch of our own adjustments, some of which override stuff in the other files. Since it comes last in bootstrap.less, you can often get away with just making changes to it instead of going into the core files.
+* As for the rest of the files: You can edit them if you need to; it's why we have a fork. But it'll be easier to upgrade later if we keep our stuff in the puppetdocs file.
+
