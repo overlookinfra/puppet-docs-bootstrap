@@ -33,5 +33,5 @@ TBH, learning how the Less stuff is laid out for the first time is kind of the o
 * There are also two other "special" files:
     * `variables.less` sets a bunch of values that get used by all the other files. Stuff like link color, fonts, etc.
     * `puppetdocs.less` has a bunch of our own adjustments, some of which override stuff in the other files. Since it comes last in bootstrap.less, you can often get away with just making changes to it instead of going into the core files.
-* As for the rest of the files: You can edit them if you need to; it's why we have a fork. But it'll be easier to upgrade later if we keep our stuff in the puppetdocs file.
+* Edit the rest of the files whenever you need to, but try to avoid mass reformatting or anything that'll make it harder to bring in changes from upstream in the future.
 
