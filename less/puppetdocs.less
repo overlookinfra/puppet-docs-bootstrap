@@ -1,16 +1,12 @@
 /* Typography */
 /* ---------- */
 
+/* See also variables.less for some typography-related values. */
+
 // Set the base font-size to match *.puppet.com, so we can also reuse its rem sizes.
 html {
   font-size: 16px;
 }
-
-/* Set body text font-weight (Bootstrap has no preference, so the browser defaults it to 400.) */
-@font-weight-base: 300;   /* Calibre Web Light */
-@font-weight-medium: 400; /* Calibre Web Regular */
-@font-weight-bold: 500;   /* Calibre Web Medium */
-@font-weight-bullets: @font-weight-base;
 
 body {
   font-weight: @font-weight-base;
@@ -114,6 +110,8 @@ ol.toc > li > ol.toc > li {
 /* Sidebar navigation styling */
 /* -------------------------- */
 
+@font-weight-bullets: @font-weight-base;
+
 nav.main ul {
   list-style-type: none;
   margin-left: -1.5em;
@@ -156,7 +154,7 @@ a.disabled-nav-link:hover {
 
 nav.main ul > li strong {
   cursor: pointer;
-  font-weight: normal;
+  font-weight: @font-weight-medium;
 }
 
 nav.main ul > li strong:hover {
