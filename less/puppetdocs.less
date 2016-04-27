@@ -29,11 +29,16 @@ h6 {
 
 a {
   font-weight: @font-weight-medium;
-}
 
-// Set a visited link color (out of fashion, but has never been a bad idea).
-a:visited {
-  color: @brand-dimmed;
+  // Code spans in links are link-colored
+  code {
+    color: inherit;
+  }
+
+  // Set a visited link color (out of fashion, but has never been a bad idea).
+  &:visited {
+    color: @brand-dimmed;
+  }
 }
 
 /* Style navbar search box */
