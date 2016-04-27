@@ -22,7 +22,7 @@ h3,
 h4,
 h5,
 h6 {
-  & strong {
+  strong {
     color: @brand-amber;
   }
 }
@@ -78,39 +78,34 @@ ol.toc {
   list-style-type: none !important;
   padding-left: 0;
   margin-left: 0;
+  & > li {
+    margin-bottom: 0;
+    margin-left: 0;
+    line-height: 1.5em;
+    &:before {
+      content: "»";
+      color: @link-color;
+      position: relative;
+      left: -5px;
+    }
+
+    /* Second-level TOCs should have lighter text and be smaller */
+    & > ol.toc {
+      padding-bottom: 0;
+      padding-top: 0.25em;
+      padding-left: 0;
+      margin-bottom: 0;
+      font-size: 0.9em;
+      margin-left: 2.5em;
+      & > li {
+        line-height: 1.25em;
+        padding-bottom: 0.25em;
+      }
+    }
+
+  }
 }
 
-/* Second-level TOCs should have lighter text and be smaller */
-
-ol.toc > li > ol.toc {
-  padding-bottom: 0;
-  padding-top: 0.25em;
-  padding-left: 0;
-  margin-bottom: 0;
-  font-size: 0.9em;
-  margin-left: 2.5em;
-}
-
-ol.toc > li {
-  margin-bottom: 0;
-  margin-left: 0;
-/*
-  padding-left: 0.5em;
- */
-  line-height: 1.5em;
-}
-
-ol.toc > li:before {
-  content: "»";
-  color: @link-color;
-  position: relative;
-  left: -5px;
-}
-
-ol.toc > li > ol.toc > li {
-  line-height: 1.25em;
-  padding-bottom: 0.25em;
-}
 
 /* Sidebar navigation styling */
 /* -------------------------- */
@@ -120,52 +115,49 @@ ol.toc > li > ol.toc > li {
 nav.main ul {
   list-style-type: none;
   margin-left: -1.5em;
+  & > li {
+    &::before {
+      content: "»";
+      font-weight: @font-weight-bullets;
+      color: @link-color;
+      position: relative;
+      left: -0.75em;
+      display: inline-block;
+      width: 0.1em;
+    }
+    &.hidden-nav::before {
+      content: "+";
+      color: @gray-light;
+    }
+    &.expanded-nav::before {
+      content: "–";
+      color: @gray-light;
+    }
+    strong {
+      cursor: pointer;
+      font-weight: @font-weight-medium;
+      &:hover {
+        color: @gray-light;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
+// Push that first UL left a bit more.
 nav.main > ul {
   margin-left: -2em;
-}
-
-nav.main ul > li::before {
-  content: "»";
-  font-weight: @font-weight-bullets;
-  color: @link-color;
-  position: relative;
-  left: -0.75em;
-  display: inline-block;
-  width: 0.1em;
-}
-
-nav.main ul > li.hidden-nav::before {
-  content: "+";
-  font-weight: @font-weight-bullets;
-  color: @gray-light;
-}
-
-nav.main ul > li.expanded-nav::before {
-  content: "–";
-  font-weight: @font-weight-bullets;
-  color: @gray-light;
 }
 
 a.disabled-nav-link {
   cursor: text;
   color: @gray;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-a.disabled-nav-link:hover {
-  text-decoration: none;
-}
 
-nav.main ul > li strong {
-  cursor: pointer;
-  font-weight: @font-weight-medium;
-}
-
-nav.main ul > li strong:hover {
-  color: @gray-light;
-  text-decoration: underline;
-}
 
 /* Callouts with colored accents */
 /* ----------------------------- */
@@ -186,7 +178,7 @@ div#version-note {
 /* Blockquote notes */
 blockquote {
   .callout(@brand-amber);
-  
+
   h1,
   h2,
   h3,
